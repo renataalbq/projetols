@@ -5,5 +5,5 @@ Guardando os dados adicionados em um JSON, listando todos os carros que foram ad
 Ao finalizar, retornará quanto tempo o carro ficou estacionado.
 ***
 ##### Equipe:
-Renata Albuquerque (20182370024)
-Flavio Henrique (20192370034)
+- Renata Albuquerque (20182370024)
+- Flavio Henrique (20192370034)
