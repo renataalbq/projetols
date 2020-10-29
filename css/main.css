@@ -51,10 +51,39 @@ td {
 /* Botão e ícone de Pesquisa */
 #search {
     background-color:deepskyblue;
+
 }#search:hover{
     background-color: rgb(23, 57, 160);
 }
 #search-icon {
+    width: 25px;
+    height: 25px;
+}
+
+/* Botão e ícone de agendamento */
+#schedule-button {
+    background-color: dodgerblue;
+    /* border: 2px solid black; */
+}#schedule-button:hover {
+    background-color: rgb(23, 100, 177);
+    /* border: 2px solid black; */
+}#schedule-icon {
+    width: 20px;
+    height: 20px;
+}
+/* Botão e ícone de exclusão */
+#clear-button {
+    background-color: red;
+    /* border: 2px solid black; */
+}#clear-button:hover {
+    background-color: rgb(170, 7, 7);
+}#clear-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.btn img{
+    height: 30px;
     width: 25px;
     height: 25px;
 }
