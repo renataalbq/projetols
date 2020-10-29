@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <div class="header container-fluid text-center p-3 bg-light">
-        <h1>Estacionamento</h1>
-        <img src="images/undraw_city_driver.svg" class="img-fluid h-25 w-25 float-right">
+    <div id="header" class="header container-fluid text-center p-3">
+        <h1>Sistema de Estacionamento</h1>
+        <img id="icon" src="images/car.svg" class="img-fluid float-right">
      </div>
-    <div class="jumbotron container-fluid text-center w-50 px-10 py-5" style="background-color: rgba(255, 255, 255, 0.678);">
+    <div id="form" class="jumbotron container-fluid text-center w-50 px-10 py-5">
         <form id="formulario">
             <div class="form-group px-md-5 ">
                 <input class="w-100 p-2 px-md-3 border" type="text" id="modelo" placeholder="Modelo do Veículo">
@@ -21,13 +21,14 @@
                 <input class="w-100 p-2 px-md-3 border" type="text" id="placa" placeholder="Placa do Veículo">
             </div>  
             <div class="text-center">
-                <button id="cadastrar" class="btn btn-lg" style="background-color:deepskyblue;">CADASTRAR</button>
+                <button type="submit" id="cadastrar" class="btn btn-lg">CADASTRAR</button>
             </div> 
         </form> 
     </div>
 
-    <div class="container text-center w-50 h-50 pb-4 px-3" style="background-color: rgb(255, 255, 255);">
+    <div class="container text-center w-50 h-50 pb-4 px-3">
         <input class="w-50 h-100 p-2" id="pesquisar" type="text" placeholder="Pesquisar placa">
+        <button type="submit" id="search" class="btn btn-lg"><img id="search-icon" src="images/search.svg" alt=""></button>
     </div>
 
     <section>
@@ -47,8 +48,8 @@
                     <td>GOL</td>    
                     <td>BEF1570</td>
                     <td>12:00</td>
-                    <td><button type="button" class="btn btn-info"><img src="images/time.png"></button></td>
-                    <td><button type="button" class="btn btn-danger"><img src="images/x.png"></button></td>
+                    <td><button id="schedule-button" type="button" class="btn btn-info"><img id="schedule-icon" src="images/schedule.svg"></button></td>
+                    <td><button id="clear-button" type="button" class="btn btn-danger"><img id="clear-icon" src="images/clear.svg"></button></td>
                 </tr>
             </tbody>
         </table>
