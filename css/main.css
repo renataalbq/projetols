@@ -1,17 +1,79 @@
-/* Responsividade */
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap');
 
-@media screen and (min-width: 768px) {  
-    .header img{
-        
-    }
 
+/* Título do sistema (cabeçalho) */
+#header{
+    background-color: #FF5003;
+}#header h1{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
 }
 
+/* Imagem principal da página */
+#icon{
+    width: 250px;
+    height: 250px;
+}
 
+/* Formatação da fonte da lista */
+td {
+    font-size: larger;
+    font-weight: 600;
+}
 
-.btn img{
-    height: 30px;
+/* Propriedades dos veículos da lista (Veículo, Placa, Entrada) */
+#modelo{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}#placa{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}#form{
+    background-color: #FF8E00;
+    border: 1px solid white; 
+    margin-top: 2vh;
+}#cadastrar{
+    border: 2px solid#002447;
+    background-color:#002447;
+    color:white;
+    font-weight: 600;
+}#cadastrar:hover {
+    border: 2px solid white;
+    background-color:white;
+    color: #002447;
+    font-weight: 600;
+}
+
+/* Botão e ícone de Pesquisa */
+#search {
+    background-color: royalblue;
+}#search:hover{
+    background-color: rgb(23, 57, 160);
+}
+#search-icon {
     width: 25px;
+    height: 25px;
 }
 
-
+/* Botão e ícone de agendamento */
+#schedule-button {
+    background-color: dodgerblue;
+    /* border: 2px solid black; */
+}#schedule-button:hover {
+    background-color: rgb(23, 100, 177);
+    /* border: 2px solid black; */
+}#schedule-icon {
+    width: 20px;
+    height: 20px;
+}
+/* Botão e ícone de exclusão */
+#clear-button {
+    background-color: red;
+    /* border: 2px solid black; */
+}#clear-button:hover {
+    background-color: rgb(170, 7, 7);
+}#clear-icon {
+    width: 20px;
+    height: 20px;
+}
