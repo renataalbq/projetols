@@ -1,8 +1,6 @@
 /* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap');
 
- 
-
 /* Título do sistema (cabeçalho) */
 #header{
     background-color: #FF5003;
@@ -13,7 +11,7 @@
 }
 
 /* Imagem principal da página */
-#icon{
+#car-illustration{
     width: 250px;
     height: 250px;
 }
@@ -23,25 +21,35 @@ td {
     font-size: larger;
 }
 
-/* Propriedades dos veículos da lista (Veículo, Placa, Entrada) */
-#modelo{
+/* Propriedades dos veículos da lista (Veículo, Placa) */
+#form-div{
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-}#placa{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-}#form{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    background-color: #e2e1e0;
+    background-color:  #f1f1f1;
     border: 1px solid white; 
     margin-top: 2vh;
-}#cadastrar{
+}
+
+#modelo, #placa {
+    font-weight: 600;
+    border-radius:.25rem
+}
+
+#modelo:focus, #placa:focus{
+    color:#495057;
+    background-color:#fff;
+    border-color:#80bdff;
+    outline:0;
+    box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
+
+#cadastrar{
     border: 2px solid#002447;
     background-color:#002447;
     color:white;
     font-weight: 600;
-}#cadastrar:hover {
+}
+#cadastrar:hover {
     border: 2px solid white;
     background-color:white;
     color: #002447;
@@ -49,66 +57,54 @@ td {
 }
 
 /* Botão e ícone de Pesquisa */
+#search-form{
+    display: block !important;
+    text-align: center !important;  
+}
+
+#search-input{
+    width: 400px;
+}
+
 #search {
     background-color:deepskyblue;
+}
 
-}#search:hover{
-    background-color: rgb(23, 57, 160);
+#search:hover{
+    background-color: rgb(23, 100, 177);
 }
 #search-icon {
     width: 25px;
     height: 25px;
 }
 
-/* Botão e ícone de agendamento */
-#schedule-button {
+
+/* Botão e ícone de tempo */
+#time-button {
     background-color: dodgerblue;
-    /* border: 2px solid black; */
-}#schedule-button:hover {
+
+}#time-button:hover {
     background-color: rgb(23, 100, 177);
-    /* border: 2px solid black; */
-}#schedule-icon {
-    width: 20px;
-    height: 20px;
+
 }
+
 /* Botão e ícone de exclusão */
 #clear-button {
     background-color: red;
-    /* border: 2px solid black; */
 }#clear-button:hover {
     background-color: rgb(170, 7, 7);
-}#clear-icon {
+}
+
+#table-btn{
     width: 20px;
     height: 20px;
 }
 
-.btn img{
-    height: 30px;
-    width: 25px;
-    height: 25px;
+@media screen and (max-width: 767px){
+    #car-illustration{
+        display: none
+    }
 }
-
-/* Botão e ícone de agendamento */
-#schedule-button {
-    background-color: dodgerblue;
-    /* border: 2px solid black; */
-}#schedule-button:hover {
-    background-color: rgb(23, 100, 177);
-    /* border: 2px solid black; */
-}#schedule-icon {
-    width: 20px;
-    height: 20px;
-}
-/* Botão e ícone de exclusão */
-#clear-button {
-    background-color: red;
-    /* border: 2px solid black; */
-}#clear-button:hover {
-    background-color: rgb(170, 7, 7);
-}#clear-icon {
-    width: 20px;
-    height: 20px;
-}
-
+    
 
 

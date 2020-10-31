@@ -5,17 +5,12 @@ cadastrar.addEventListener("click", function(event) {
  
    var form = document.querySelector("#formulario");
 
-   var modelo = form.modelo.value;
-   var placa = form.placa.value;
+   var modelo = form.modelo.value.trim().toUpperCase()
+   var placa = form.placa.value.trim().toUpperCase()
    var horaEntrada = new Date();
    var horaFormat = `${horaEntrada.getHours()}:${horaEntrada.getMinutes()}`
 
-   if (!modelo){
-      alert("Preencha todos os campos!");
-		return false;
-   }
-
-   else if (!placa){
+   if (!modelo || !placa){
       alert("Preencha todos os campos!");
 		return false;
    }
@@ -25,13 +20,12 @@ cadastrar.addEventListener("click", function(event) {
 		return false;
    }
 
-
    var veiculoTr = document.createElement("tr");
 
    var modeloTd = document.createElement("td");
    var placaTd = document.createElement("td");
    var horaTd = document.createElement("td")
-   var finalizarTd = document.createElement("button")
+   var finalizarTd = document.createElement("td")
    var excluirTd = document.createElement("td")
 
    //finalizarTd.className = 'btnTime';
