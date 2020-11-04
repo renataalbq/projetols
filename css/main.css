@@ -1,6 +1,10 @@
 /* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap');
 
+body {
+    padding-bottom: 20px;
+}
+
 /* Título do sistema (cabeçalho) */
 #header{
     background-color: #FF5003;
@@ -25,7 +29,7 @@ td {
 #form-div{
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    background-color:  #f1f1f1;
+    background-color:  #ececec;
     border: 1px solid white; 
     margin-top: 2vh;
 }
@@ -38,21 +42,20 @@ td {
 #modelo:focus, #placa:focus{
     color:#495057;
     background-color:#fff;
-    border-color:#80bdff;
     outline:0;
-    box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+    box-shadow:0 0 0 .1rem rgba(0,123,255,.25)
 }
 
 #cadastrar{
     border: 2px solid#002447;
-    background-color:#002447;
+    background-color:#14213D;
     color:white;
     font-weight: 600;
 }
 #cadastrar:hover {
     border: 2px solid white;
-    background-color:white;
-    color: #002447;
+    background-color: #467599;
+    color: #fafafa;
     font-weight: 600;
 }
 
@@ -61,38 +64,24 @@ td {
     display: block !important;
     text-align: center !important;  
 }
-
 #search-input{
     width: 400px;
-}
-
-#search {
-    background-color:deepskyblue;
-}
-
-#search:hover{
-    background-color: rgb(23, 100, 177);
-}
-#search-icon {
-    width: 25px;
-    height: 25px;
 }
 
 
 /* Botão e ícone de tempo */
 #time-button {
-    background-color: dodgerblue;
+    background-color: #1D3354;
 
 }#time-button:hover {
-    background-color: rgb(23, 100, 177);
-
+    background-color: #294570;
 }
 
 /* Botão e ícone de exclusão */
 #clear-button {
-    background-color: red;
+    background-color: #d61500;
 }#clear-button:hover {
-    background-color: rgb(170, 7, 7);
+    background-color: #df2e1a;
 }
 
 #table-btn{
@@ -105,6 +94,3 @@ td {
         display: none
     }
 }
-    
-
-
