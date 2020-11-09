@@ -27,11 +27,16 @@ cadastrar.addEventListener("click", function(event) {
    var horaTd = document.createElement("td")
    var finalizarTd = document.createElement("td")
    var excluirTd = document.createElement("td")
+   
+   var finalizarBtn = '<td><button id="time-button" class="btn btn-info"><img id="table-btn" src="images/time_white.png"></button></td>'
+   var excluirBtn = '<td><button id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button></td>'
 
 
    modeloTd.textContent = modelo;
    placaTd.textContent = placa;
    horaTd.textContent = horaFormat;
+   finalizarTd.innerHTML = finalizarBtn;
+   excluirTd.innerHTML = excluirBtn;
 
    veiculoTr.appendChild(modeloTd);
    veiculoTr.appendChild(placaTd);
@@ -46,5 +51,4 @@ cadastrar.addEventListener("click", function(event) {
    form.reset();
 
 });
-
 
