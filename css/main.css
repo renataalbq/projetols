@@ -1,23 +1,32 @@
 /* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap');
 
-body {
-    padding-bottom: 20px;
-}
+
 
 /* Título do sistema (cabeçalho) */
 #header{
-    background-color: #FF5003;
+    height: 70px;
+
 }
-#header h1{
-    color: white;
-    font-family: 'Open Sans', sans-serif;
+
+#logo{
+    padding-bottom: 100px;
+    float: left; 
+}
+
+#container-main{
+    padding-top: 40px;
+    background: rgb(255,3,3);
+    background:linear-gradient(to right,#ff0000,#ff5500,#fff400);
+    
 }
 
 /* Imagem principal da página */
 #car-illustration{
+
     width: 250px;
     height: 250px;
+    margin-right: 10px;
 }
 
 /* Formatação da fonte da lista */
@@ -29,8 +38,6 @@ td {
 #form-div{
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    background-color:  #ececec;
-    border: 1px solid white; 
     margin-top: 2vh;
 }
 
@@ -59,10 +66,11 @@ td {
     font-weight: 600;
 }
 
-/* Botão e ícone de Pesquisa */
+/* Pesquisa */
 #search-form{
     display: block !important;
-    text-align: center !important;  
+    text-align: center !important; 
+    background-color: #002447;
 }
 #search-input{
     width: 400px;
@@ -89,8 +97,18 @@ td {
     height: 20px;
 }
 
-@media screen and (max-width: 767px){
+/* Responsividade */
+@media screen and (max-width: 816px){
     #car-illustration{
         display: none
     }
 }
+
+
+@media screen and (max-width: 580px){
+    #search-input{
+        width: 450px;
+        justify-content: center;
+    }
+}
+

@@ -28,11 +28,6 @@ cadastrar.addEventListener("click", function(event) {
    var finalizarTd = document.createElement("td")
    var excluirTd = document.createElement("td")
 
-   //finalizarTd.className = 'btnTime';
-   //var img = document.createElement('div');
-   //img.className = 'image';
-   //img.style.backgroundImage = 'url(images/time.png)';
-   //finalizarTd.appendChild(img);
 
    modeloTd.textContent = modelo;
    placaTd.textContent = placa;
@@ -47,6 +42,8 @@ cadastrar.addEventListener("click", function(event) {
    var tabela = document.querySelector("#garagem");
 
    tabela.appendChild(veiculoTr);
+
+   form.reset();
 
 });
 

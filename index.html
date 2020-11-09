@@ -8,51 +8,50 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <div id="header" class="header container-fluid text-center p-3">
-        <h1>Sistema de Estacionamento</h1>
-        <img id="car-illustration" src="images/car.svg" class="img-fluid float-right">
+    <div id="header" class="header container-fluid text-center p-3" style="background-color: #14213D;">
+        <img id="logo" src="images/carlogo1.png" alt="">
      </div>
-    <div id="form-div" class="jumbotron container-fluid text-center w-50 px-10 py-5">
-        <form id="formulario">
-            <div class="form-group px-md-5">
-                <input class="w-100 p-2 px-md-3 border" type="text" id="modelo" placeholder="Modelo do Veículo">
+     <main>
+         <div id="container-main" class="container-fluid">
+            <img id="car-illustration" src="images/car.svg" class="img-fluid float-right">
+            <div id="form-div" class=" container-fluid text-center w-50 px-10 py-5 mt-4">
+                <form id="formulario">
+                    <div class="form-group px-md-5">
+                        <input class="w-100 p-2 px-md-3 border" type="text" id="modelo" placeholder="Modelo do veículo">
+                    </div>
+                    <div class="form-group px-md-5 ">
+                        <input class="w-100 p-2 px-md-3 border" type="text" id="placa" placeholder="Placa do veículo">
+                    </div>  
+                    <div class="text-center">
+                        <button type="submit" id="cadastrar" class="btn btn-lg">CADASTRAR</button>
+                    </div> 
+                </form> 
             </div>
-            <div class="form-group px-md-5 ">
-                <input class="w-100 p-2 px-md-3 border" type="text" id="placa" placeholder="Placa do Veículo">
-            </div>  
-            <div class="text-center">
-                <button type="submit" id="cadastrar" class="btn btn-lg">CADASTRAR</button>
-            </div> 
-        </form> 
-    </div>
+        </div>
+        <form class="form-inline " id="search-form">
+            <input class="form-control p-3 m-3" id="search-input" type="search" placeholder="Pesquisar placa" aria-label="Pesquisar">
+        </form>
 
-    <form class="form-inline pb-4" id="search-form">
-        <input class="form-control p-3 mr-sm-1" id="search-input" type="search" placeholder="Pesquisar placa" aria-label="Pesquisar">
-    </form>
-
-    <section>
-        <table class="table text-center table-bordered" >
-            <thead style="background-color: rgb(221, 221, 221);">
-                <tr>
-                    <th>Veículo</th>
-                    <th>Placa</th>
-                    <th>Entrada</th>
-                    <th>Finalizar</th>
-                    <th>Excluir</th>
-                </tr>
-            </thead>
-            <!-- Exemplo de como seria adicionado com js -->
-            <tbody id="garagem">
-                <tr>
-                    <td>GOL</td>    
-                    <td>BEF1570</td>
-                    <td>12:00</td>
-                    <td><button id="time-button" type="button" class="btn"><img id="table-btn" src="images/time_white.png"></button></td>
-                    <td><button id="clear-button" type="button" class="btn"><img id="table-btn" src="images/clear_white.png"></button></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <div>
+            <table class="table text-center table-bordered" style="background-color: rgb(255, 255, 255);" >
+                <thead style="background-color:rgb(221, 221, 221);">
+                    <tr>
+                        <th>Veículo</th>
+                        <th>Placa</th>
+                        <th>Entrada</th>
+                        <th>Finalizar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                <!-- Exemplo de como seria adicionado com js -->
+                <tbody id="garagem">
+                    <tr>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
 
     <script src="js/main.js"></script>
     
