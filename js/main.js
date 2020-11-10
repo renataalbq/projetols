@@ -22,6 +22,7 @@ cadastrar.addEventListener("click", function(event) {
 		return false;
    }
 
+
    var veiculoTr = document.createElement("tr");
 
    var modeloTd = document.createElement("td");

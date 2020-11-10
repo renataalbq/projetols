@@ -37,7 +37,6 @@
         <form class="form-inline " id="search-form">
             <input class="form-control p-3 m-3" id="search-input" autocomplete="off" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
         </form>
-
         <div>
             <table class="table text-center table-bordered" style="background-color: rgb(255, 255, 255);" >
                 <thead style="background-color:rgb(221, 221, 221);">
@@ -49,15 +48,26 @@
                         <th>Excluir</th>
                     </tr>
                 </thead>
-                <!-- Exemplo de como seria adicionado com js -->
+                
                 <tbody id="garagem">
+                    <tr>
+                        <td>GOL</td>
+                        <td id="placaBody">BHJ1326</td>
+                        <td>10:20</td>
+                        <td><button id="time-button" class="btn btn-info"><img id="table-btn" src="images/time_white.png"></button></td>
+                        <td><button id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </main>
 
     <script src="js/main.js"></script>
+
     <script src="/js/calcularHoras.js"></script>
+
+    <script src="js/filter.js"></script>
+
     
 </body>
 </html>

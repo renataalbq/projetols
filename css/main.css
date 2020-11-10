@@ -113,6 +113,9 @@ td {
     height: 20px;
 }
 
+.invisivel{
+    display: none;
+}
 
 /* Responsividade */
 @media screen and (max-width: 816px){
