@@ -8,7 +8,9 @@ cadastrar.addEventListener("click", function(event) {
    var modelo = form.modelo.value.trim().toUpperCase()
    var placa = form.placa.value.trim().toUpperCase()
    var horaEntrada = new Date();
-   var horaFormat = `${horaEntrada.getHours()}:${horaEntrada.getMinutes()}`
+   var hora = horaEntrada.getHours()
+   var minutos = horaEntrada.getMinutes()
+   var horaFormat = `${hora}:${minutos}`
 
    if (!modelo || !placa){
       alert("Preencha todos os campos!");
@@ -19,6 +21,7 @@ cadastrar.addEventListener("click", function(event) {
       alert("Preencha todos os campos!");
 		return false;
    }
+
 
    var veiculoTr = document.createElement("tr");
 
