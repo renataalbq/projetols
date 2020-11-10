@@ -8,7 +8,9 @@ cadastrar.addEventListener("click", function(event) {
    var modelo = form.modelo.value.trim().toUpperCase()
    var placa = form.placa.value.trim().toUpperCase()
    var horaEntrada = new Date();
-   var horaFormat = `${horaEntrada.getHours()}:${horaEntrada.getMinutes()}`
+   var hora = horaEntrada.getHours();
+   var minutos = horaEntrada.getMinutes();
+   var horaFormat = `${hora}:${minutos}`
 
    if (!modelo || !placa){
       alert("Preencha todos os campos!");
@@ -28,7 +30,7 @@ cadastrar.addEventListener("click", function(event) {
    var finalizarTd = document.createElement("td")
    var excluirTd = document.createElement("td")
    
-   var finalizarBtn = '<td><button id="time-button" class="btn btn-info"><img id="table-btn" src="images/time_white.png"></button></td>'
+   var finalizarBtn = '<td><button onclick="calcHoras(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" id="time-button" class="btn btn-info"><img id="table-btn" src="images/time_white.png"></button></td>'
    var excluirBtn = '<td><button id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button></td>'
 
 
@@ -51,4 +53,3 @@ cadastrar.addEventListener("click", function(event) {
    form.reset();
 
 });
-

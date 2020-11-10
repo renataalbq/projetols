@@ -8,19 +8,25 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <div id="header" class="header container-fluid text-center p-3" style="background-color: #14213D;">
-        <img id="logo" src="images/carlogo1.png" alt="">
-     </div>
+    <header class="header container-fluid text-center p-3 d-flex justify-content-between align-items-center" style="background-color: #14213D" >
+        <div id="header-banner">
+            <img id="logo" src="images/logo1.png" alt="">
+        </div>
+        <div id="dark-input">
+            <input type="checkbox" type="switch">
+            <label for="dark">Dark Mode</label>
+        </div>
+    </header>
      <main>
          <div id="container-main" class="container-fluid">
             <img id="car-illustration" src="images/car.svg" class="img-fluid float-right">
             <div id="form-div" class=" container-fluid text-center w-50 px-10 py-5 mt-4">
                 <form id="formulario">
                     <div class="form-group px-md-5">
-                        <input class="w-100 p-2 px-md-3 border" type="text" id="modelo" placeholder="Modelo do veículo">
+                        <input class="w-100 p-2 px-md-3 border" autocomplete="off" type="text" id="modelo" placeholder="Modelo do veículo">
                     </div>
                     <div class="form-group px-md-5 ">
-                        <input class="w-100 p-2 px-md-3 border" type="text" id="placa" placeholder="Placa do veículo">
+                        <input class="w-100 p-2 px-md-3 border" autocomplete="off" type="text" id="placa" placeholder="Placa do veículo">
                     </div>  
                     <div class="text-center">
                         <button type="submit" id="cadastrar" class="btn btn-lg">CADASTRAR</button>
@@ -29,7 +35,7 @@
             </div>
         </div>
         <form class="form-inline " id="search-form">
-            <input class="form-control p-3 m-3" id="search-input" type="search" placeholder="Pesquisar placa" aria-label="Pesquisar">
+            <input class="form-control p-3 m-3" id="search-input" autocomplete="off" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
         </form>
 
         <div>
@@ -51,6 +57,7 @@
     </main>
 
     <script src="js/main.js"></script>
+    <script src="/js/calcularHoras.js"></script>
     
 </body>
 </html>
