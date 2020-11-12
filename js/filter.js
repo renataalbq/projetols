@@ -10,9 +10,9 @@ search.addEventListener("input", function() {
             var veiculos = veiculos[i];
             var placaTd = placaBody;
             var placa = placaTd.textContent;
-            var expressao = new RegExp(this.value, "i");
+            var exp = new RegExp(this.value, "i");
 
-            if (!expressao.test(placa)) {
+            if (!exp.test(placa)) {
                 veiculos.classList.add("invisivel");
             } else {
                 veiculos.classList.remove("invisivel");
