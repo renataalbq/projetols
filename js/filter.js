@@ -1,27 +1,16 @@
 var search = document.querySelector("#search-input");
+var tabela = document.querySelector("#garagem");
 
-search.addEventListener("input", function() {
-    var veiculos = document.querySelectorAll("#garagem");
-    var form = document.querySelector("#formulario");
-    var placaBody = form.placa.value;
 
-    if (this.value.length > 0) {
-        for (var i = 0; i < veiculos.length; i++) {
-            var veiculos = veiculos[i];
-            var placaTd = placaBody;
-            var placa = placaTd.textContent;
-            var exp = new RegExp(this.value, "i");
-
-            if (!exp.test(placa)) {
-                veiculos.classList.add("invisivel");
-            } else {
-                veiculos.classList.remove("invisivel");
-            }
-        }
-    } else {
-        for (var i = 0; i < veiculos.length; i++) {
-            var veiculos = veiculos[i];
-            veiculos.classList.remove("invisivel");
-        }
+search.onkeyup = function(){
+    var filtro = search.value;
+    for (var i = 0; i < tabela.rows.length; i++){
+        var placa = tabela.rows[i].cells[1].innerText;
+        console.log(placa)
+        var corresponde = placa.toUpperCase().indexOf(filtro) >= 0;
+        tabela.rows[i].style.display = corresponde ? '' : 'none';
     }
-});
+}   
+
+  
+

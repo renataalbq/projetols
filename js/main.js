@@ -68,12 +68,13 @@ function exibeVeiculos(){
 		var placa = garagem[i].placa;
 		var hora = garagem[i].hora;
 		var minutos = garagem[i].minutos;
-      exibir.innerHTML += 
-                  '<tr> <td>'+ modelo + '</td>'+
-		 				      '<td>'+ placa + '</td>' +
-                        '<td>'+ hora + ':' + minutos + '</td>' +
-                        '<td><button onclick="calcHoras(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" id="time-button" class="btn btn-info"><img id="table-btn" src="images/time_white.png"></button></td>'+
-		 						'<td><button class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button></td>'+
-		 				'</tr>';
+      exibir.innerHTML += '<tr> <td>'+ modelo + '</td>'+
+      '<td>'+ placa + '</td>' +
+      '<td>'+ hora + ':' + minutos + '</td>' +
+      '<td><button onclick="calcHoras(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" id="time-button" class="btn btn-info"><img id="table-btn" src="images/time_white.png"></button></td>'+
+		'<td><button class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button></td>'+
+		'</tr>';
 	}
 }
+
+
