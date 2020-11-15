@@ -1,33 +1,79 @@
 var cadastrar = document.querySelector("#cadastrar");
 
+
 cadastrar.addEventListener("click", function(event) {
    event.preventDefault();
-
+ 
    var form = document.querySelector("#formulario");
-
-   var modelo = form.modelo.value;
-   var placa = form.placa.value;
+   var modelo = form.modelo.value.trim().toUpperCase()
+   var placa = form.placa.value.trim().toUpperCase()
    var horaEntrada = new Date();
+   var hora = horaEntrada.getHours();
+   var minutos = horaEntrada.getMinutes();
+
+   if (!modelo || !placa){
+      alert("Preencha todos os campos!");
+		return false;
+   }
+
+   var veiculo = {
+      modelo: modelo,
+      placa: placa,
+      hora: hora,
+      minutos: minutos
+   }  
+
+   if(sessionStorage.getItem('veiculo') === null){
+      var garagem = [];
+      garagem.push(veiculo);
+      sessionStorage.setItem('veiculo', JSON.stringify(garagem)); 
+   } else { 
+      var garagem = JSON.parse(sessionStorage.getItem('veiculo'));
+      garagem.push(veiculo);
+      sessionStorage.setItem('veiculo', JSON.stringify(garagem));
+   }
 
    var veiculoTr = document.createElement("tr");
+   var editarBtn = '<button id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button>'
+   var excluirBtn = '<button onclick="remove(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')"" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
 
-   var modeloTd = document.createElement("td");
-   var placaTd = document.createElement("td");
-   var horaTd = document.createElement("td")
-   var finalizarTd = document.createElement("td")
-   var excluirTd = document.createElement("td")
+   veiculoTr.innerHTML = `
+              <td>${veiculo.modelo}</td>
+              <td>${veiculo.placa}</td>
+              <td>${veiculo.hora}:${veiculo.minutos}</td>
+              <td>${editarBtn} </td>
+              <td>${excluirBtn}</td>
+              `;
 
-   modeloTd.textContent = modelo;
-   placaTd.textContent = placa;
+   
+   var tableGaragem = document.querySelector("#garagem");
 
-   veiculoTr.appendChild(modeloTd);
-   veiculoTr.appendChild(placaTd);
-   veiculoTr.appendChild(horaTd)
-   veiculoTr.appendChild(finalizarTd);
-   veiculoTr.appendChild(excluirTd)
+   tableGaragem.appendChild(veiculoTr);
 
+   form.reset();
 
-   var tabela = document.querySelector("#garagem");
+   exibeVeiculos()
 
-   tabela.appendChild(veiculoTr);
 });
+
+
+function exibeVeiculos(){
+	var garagem = JSON.parse(sessionStorage.getItem('veiculo'));
+	var exibir = document.getElementById('garagem');
+
+	exibir.innerHTML = '';
+
+	for(var i = 0; i < garagem.length; i++){
+		var modelo = garagem[i].modelo;
+		var placa = garagem[i].placa;
+		var hora = garagem[i].hora;
+		var minutos = garagem[i].minutos;
+      exibir.innerHTML += '<tr> <td>'+ modelo + '</td>'+
+      '<td>'+ placa + '</td>' +
+      '<td>'+ hora + ':' + minutos + '</td>' +
+      '<td><button id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button></td>'+
+		'<td><button onclick="check(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button></td>'+
+		'</tr>';
+	}
+}
+

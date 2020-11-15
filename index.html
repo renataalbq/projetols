@@ -7,55 +7,58 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
-    <div id="header" class="header container-fluid text-center p-3">
-        <h1>Sistema de Estacionamento</h1>
-        <img id="icon" src="images/car.svg" class="img-fluid float-right">
-     </div>
-    <div id="form" class="jumbotron container-fluid text-center w-50 px-10 py-5">
-        <form id="formulario">
-            <div class="form-group px-md-5 ">
-                <input class="w-100 p-2 px-md-3 border" type="text" id="modelo" placeholder="Modelo do Veículo">
+<body onload="exibeVeiculos()">
+    <header class="header container-fluid text-center p-3 d-flex justify-content-between align-items-center" style="background-color: #14213D" >
+        <div id="header-banner">
+            <img id="logo" src="images/logo1.png" alt="">
+        </div>
+        <!--<div id="dark-input">
+            <input type="checkbox" type="switch">
+            <label for="dark">Dark Mode</label>
+        </div>-->
+    </header>
+     <main>
+         <div id="container-main" class="container-fluid">
+            <img id="car-illustration" src="images/car.svg" class="img-fluid float-right">
+            <div id="form-div" class=" container-fluid text-center w-50 px-10 py-5 mt-4">
+                <form id="formulario">
+                    <div class="form-group px-md-5">
+                        <input class="w-100 p-2 px-md-3 border" autocomplete="off" type="text" id="modelo" placeholder="Modelo do veículo">
+                    </div>
+                    <div class="form-group px-md-5 ">
+                        <input class="w-100 p-2 px-md-3 border" autocomplete="off" type="text" id="placa" placeholder="Placa do veículo">
+                    </div>  
+                    <div class="text-center">
+                        <button type="submit" id="cadastrar" class="btn btn-lg">CADASTRAR</button>
+                    </div> 
+                </form> 
             </div>
-            <div class="form-group px-md-5 ">
-                <input class="w-100 p-2 px-md-3 border" type="text" id="placa" placeholder="Placa do Veículo">
-            </div>  
-            <div class="text-center">
-                <button type="submit" id="cadastrar" class="btn btn-lg">CADASTRAR</button>
-            </div> 
-        </form> 
-    </div>
-
-    <div class="container text-center w-50 h-50 pb-4 px-3">
-        <input class="w-50 h-100 p-2" id="pesquisar" type="text" placeholder="Pesquisar placa">
-        <button type="submit" id="search" class="btn btn-lg"><img id="search-icon" src="/images/search.svg" alt=""></button>
-    </div>
-
-    <section>
-        <table class="table text-center table-bordered" style="background-color: rgb(255, 255, 255);">
-            <thead>
-                <tr>
-                    <th>Veículo</th>
-                    <th>Placa</th>
-                    <th>Entrada</th>
-                    <th>Finalizar</th>
-                    <th>Excluir</th>
-                </tr>
-            </thead>
-            <!-- Exemplo de como seria adicionado com js -->
-            <tbody id="garagem">
-                <tr>
-                    <td>GOL</td>    
-                    <td>BEF1570</td>
-                    <td>12:00</td>
-                    <td><button id="schedule-button" type="button" class="btn btn-info"><img id="schedule-icon" src="images/schedule.svg"></button></td>
-                    <td><button id="clear-button" type="button" class="btn btn-danger"><img id="clear-icon" src="images/clear.svg"></button></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        </div>
+        <form class="form-inline " id="search-form">
+            <input class="form-control p-3 m-3" id="search-input" autocomplete="off" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+        </form>
+        <div>
+            <table class="table text-center table-bordered table-hover" style="background-color: rgb(255, 255, 255);" >
+                <thead style="background-color:rgb(221, 221, 221);">
+                    <tr>
+                        <th>Veículo</th>
+                        <th>Placa</th>
+                        <th>Entrada</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="garagem"></tbody>
+            </table>
+        </div>
+    </main>
 
     <script src="js/main.js"></script>
+    <script src="js/calcularHoras.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/remove.js"></script>
+
     
 </body>
 </html>

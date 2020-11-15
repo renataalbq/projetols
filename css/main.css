@@ -2,78 +2,138 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap');
 
 
+
 /* Título do sistema (cabeçalho) */
 #header{
-    background-color: #FF5003;
-}#header h1{
+    height: 70px;
+}
+
+#logo{
+    float: left;
+    width: fit-content;
+}
+
+
+/* Trocar pra Switch  (!!!) */
+#dark-input {
+    display: flexbox;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    padding-top: 0.6em;
+    padding-bottom:0.3em ;
     color: white;
-    font-family: 'Open Sans', sans-serif;
+    background-color: #012e5a;
+    border: 2px solid #012e5a;
+    border-radius: 10%;
+}
+
+#container-main{
+    padding-top: 40px;
+    background: rgb(255,3,3);
+    background:linear-gradient(to right,#ff0000,#ff5500,#fff400);
+    
 }
 
 /* Imagem principal da página */
-#icon{
+#car-illustration{
+
     width: 250px;
     height: 250px;
+    margin-right: 10px;
 }
 
 /* Formatação da fonte da lista */
 td {
     font-size: larger;
-    font-weight: 600;
 }
 
-/* Propriedades dos veículos da lista (Veículo, Placa, Entrada) */
-#modelo{
+
+/* Propriedades dos veículos da lista (Veículo, Placa) */
+#form-div{
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-}#placa{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-}#form{
-    background-color: #FF8E00;
-    border: 1px solid white; 
     margin-top: 2vh;
-}#cadastrar{
+}
+
+#modelo, #placa {
+    font-weight: 600;
+    border-radius:.25rem;
+    border-bottom: 2px solid red;
+}
+
+#modelo:focus, #placa:focus{
+    color:#495057;
+    background-color:#fff;
+    outline:0;
+    box-shadow:0 0 0 .1rem rgba(0,123,255,.25);
+    border-bottom: 2px solid red;
+
+}
+
+#cadastrar{
     border: 2px solid#002447;
-    background-color:#002447;
+    background-color:#14213D;
     color:white;
     font-weight: 600;
-}#cadastrar:hover {
-    border: 2px solid white;
-    background-color:white;
-    color: #002447;
+}
+#cadastrar:hover {
+    border: 2px solid rgb(255, 72, 0);
+    background-color:#254281;
+    color: #fafafa;
     font-weight: 600;
 }
 
-/* Botão e ícone de Pesquisa */
-#search {
-    background-color: royalblue;
-}#search:hover{
-    background-color: rgb(23, 57, 160);
+/* Pesquisa */
+#search-form{
+    display:flex;
+    justify-content: center; 
+    background-color: #002447;
 }
-#search-icon {
-    width: 25px;
-    height: 25px;
+#search-input{
+    width: 400px;
 }
 
-/* Botão e ícone de agendamento */
-#schedule-button {
-    background-color: dodgerblue;
-    /* border: 2px solid black; */
-}#schedule-button:hover {
-    background-color: rgb(23, 100, 177);
-    /* border: 2px solid black; */
-}#schedule-icon {
-    width: 20px;
-    height: 20px;
+
+/* Botão e ícone de tempo */
+#edit-button {
+    background-color: #1D3354;
+
+}#edit-button:hover {
+    background-color: #294570;
 }
+
 /* Botão e ícone de exclusão */
 #clear-button {
-    background-color: red;
-    /* border: 2px solid black; */
+    background-color: #d61500;
 }#clear-button:hover {
-    background-color: rgb(170, 7, 7);
-}#clear-icon {
+    background-color: #df2e1a;
+}
+
+#table-btn{
     width: 20px;
     height: 20px;
 }
+
+.invisivel{
+    display: none;
+}
+
+/* Responsividade */
+@media screen and (max-width: 816px){
+    #car-illustration{
+        display: none
+    }
+}
+
+
+@media screen and (max-width: 580px){
+    #search-input{
+        width: 380px;
+        justify-content: center;
+    }
+
+    main{
+        background-color: #002447;
+    }
+}
+
