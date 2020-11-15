@@ -9,8 +9,8 @@ function calcHoras(placa,horaEntrada,minutoEntrada) {
     var minAtual = parseInt(date.getMinutes());
     var qtdHoras = horaAtual - horaEntrada;
     var qtdMinutos = minAtual - minutoEntrada
-    var total = `${qtdHoras}h${qtdMinutos}m`
+    var total = `${qtdHoras}h:${qtdMinutos}m`
   
-    alert(`O carro ficou estacionado ${total}`)  
+    return `O carro ficou estacionado ${total}`
   
 }

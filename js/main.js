@@ -34,14 +34,14 @@ cadastrar.addEventListener("click", function(event) {
    }
 
    var veiculoTr = document.createElement("tr");
-   var finalizarBtn = '<button onclick="calcHoras(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" id="time-button" class="btn btn-info"><img id="table-btn" src="images/time_white.png"></button>'
-   var excluirBtn = '<button id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
+   var editarBtn = '<button id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button>'
+   var excluirBtn = '<button onclick="remove(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')"" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
 
    veiculoTr.innerHTML = `
               <td>${veiculo.modelo}</td>
               <td>${veiculo.placa}</td>
               <td>${veiculo.hora}:${veiculo.minutos}</td>
-              <td>${finalizarBtn} </td>
+              <td>${editarBtn} </td>
               <td>${excluirBtn}</td>
               `;
 
@@ -71,10 +71,9 @@ function exibeVeiculos(){
       exibir.innerHTML += '<tr> <td>'+ modelo + '</td>'+
       '<td>'+ placa + '</td>' +
       '<td>'+ hora + ':' + minutos + '</td>' +
-      '<td><button onclick="calcHoras(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" id="time-button" class="btn btn-info"><img id="table-btn" src="images/time_white.png"></button></td>'+
-		'<td><button class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button></td>'+
+      '<td><button id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button></td>'+
+		'<td><button onclick="check(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button></td>'+
 		'</tr>';
 	}
 }
-
 
