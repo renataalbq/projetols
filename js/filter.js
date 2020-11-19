@@ -1,6 +1,7 @@
 var search = document.querySelector("#search-input");
 var tabela = document.querySelector("#garagem");
-
+var form = document.querySelector("#formulario")
+var placa = form.placa.value
 
 search.onkeyup = function(){
     var filtro = search.value;

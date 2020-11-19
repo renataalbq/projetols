@@ -35,7 +35,7 @@ cadastrar.addEventListener("click", function(event) {
 
    var veiculoTr = document.createElement("tr");
    var editarBtn = '<button id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button>'
-   var excluirBtn = '<button onclick="remove(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')"" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
+   var excluirBtn = '<button onclick="check(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')"" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
 
    veiculoTr.innerHTML = `
               <td>${veiculo.modelo}</td>
