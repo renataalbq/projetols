@@ -16,6 +16,11 @@ cadastrar.addEventListener("click", function(event) {
 		return false;
    }
 
+   let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4}$");
+   if (validaPlaca.test(placa) == false){
+      alert('Placa Inválida!')
+   }
+
    var veiculo = {
       modelo: modelo,
       placa: placa,
@@ -76,4 +81,3 @@ function exibeVeiculos(){
 		'</tr>';
 	}
 }
-

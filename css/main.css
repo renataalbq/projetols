@@ -118,6 +118,10 @@ td {
     display: none;
 }
 
+.invalido{
+    border: 1px solid red
+}
+
 /* Responsividade */
 @media screen and (max-width: 816px){
     #car-illustration{
