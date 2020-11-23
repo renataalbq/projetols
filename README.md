@@ -1,7 +1,7 @@
 # Sistema de Estacionamento
 ***
 Projeto consiste em um sistema gerenciamento de entrada e saída de carros em um estacionamento.
-Guardando os dados no sessionStorage, listando todos os carros que foram adicionados, sendo possível pesquisar o carro pela placa, alterar os dados inseridos (modelo e placa), e remover o veículo. 
+Listando todos os carros que foram adicionados, sendo possível pesquisar o carro pela placa, alterar os dados inseridos (modelo e placa), e remover o veículo. 
 Ao solicitar a remoção do veículo, retornará quanto tempo ele ficou estacionado.
 ***
 ##### Equipe:
