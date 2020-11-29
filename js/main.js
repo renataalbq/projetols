@@ -1,8 +1,12 @@
 var cadastrar = document.querySelector("#cadastrar");
 
+// cadastrar.addEventListener("keydown", function(event) {
+//    event.preventDefault();
+// })
 
 cadastrar.addEventListener("click", function(event) {
    event.preventDefault();
+
  
    var form = document.querySelector("#formulario");
 
@@ -11,13 +15,25 @@ cadastrar.addEventListener("click", function(event) {
    var horaEntrada = new Date();
    var hora = horaEntrada.getHours();
    var minutos = horaEntrada.getMinutes();
+   
+   var horaFormat = `${hora}:${minutos}`
+
+   if (hora < 10 ) {
+      var horaFormat = `0${hora}:${minutos}`
+   }
+   if (minutos < 10 ) {
+      var horaFormat = `${hora}:0${minutos}`
+   }
+   if (hora < 10 && minutos < 10) {
+      var horaFormat = `0${hora}:0${minutos}`
+   }
 
    if (!modelo || !placa){
       alert("Preencha todos os campos!");
 		return false;
    }
 
-   var horaFormat = `${hora}:${minutos}`
+
 
    let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4}$");
    if (validaPlaca.test(placa) === false){ 
