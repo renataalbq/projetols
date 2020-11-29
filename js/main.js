@@ -22,8 +22,28 @@ cadastrar.addEventListener("click", function(event) {
    if (validaPlaca.test(placa) === false){
       var placaClass = form.placa
       placaClass.classList.add("invalida")
+
+      // form.reset()
+      placaClass.value = "";
+      placaClass.textContent = "Placa Inválida";
+
+      var inputInvalidTimeOut;
+
+      function timeOut() {
+         inputInvalidTimeOut = setTimeout(wrongInput, 2000)
+
+         return inputInvalidTimeOut
+      }
+
+      function wrongInput() {
+         placaClass.classList.remove("invalida")
+      }
+   
+      timeOut()
       return false
    }
+   
+   
 
    var veiculoTr = document.createElement("tr");
 

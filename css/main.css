@@ -59,6 +59,7 @@ td {
     font-weight: 600;
     border-radius:.25rem;
     /* border-bottom: 2px solid red; */
+    border-top: none;
 }
 
 #modelo:focus, #placa:focus{
@@ -118,7 +119,7 @@ td {
 }
 
 .invalida{
-    background-color: #f38073; */
+    animation: placaInput 3s linear;
 }
 
 
@@ -141,3 +142,23 @@ td {
     }
 }
 
+@keyframes placaInput {
+    0.0%{
+        background: white;
+        opacity: 1;
+        color: black;
+        border: 2px solid black;
+    }
+    50%{
+        background: red;
+        opacity: 1;
+        color: white;
+        border: 2px solid white;
+    }
+    100%{
+        background: white;
+        opacity: 1;
+        color: white;
+        border: 2px solid white;
+    }
+}
