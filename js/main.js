@@ -21,6 +21,25 @@ cadastrar.addEventListener("click", function(event) {
    let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4}$");
    if (validaPlaca.test(placa) === false){
       alert('Placa Inválida!')
+
+      placaClass.value = "";
+      placaClass.textContent = "Placa Inválida";
+
+      var inputInvalidTimeOut;
+
+      function timeOut() {
+         inputInvalidTimeOut = setTimeout(wrongInput, 2000)
+
+         return inputInvalidTimeOut
+      }
+
+      function wrongInput() {
+         placaClass.classList.remove("invalida")
+      }
+
+      timeOut()
+
+      
       return false
    }
 
@@ -33,7 +52,7 @@ cadastrar.addEventListener("click", function(event) {
    var excluirTd = document.createElement("td");
 
    var editarBtn = '<button id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button>'
-   var excluirBtn = '<button onclick="check(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')"" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
+   var excluirBtn = '<button onclick="check(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
 
    veiculoTr.setAttribute('class', 'veiculoTr');
    placaTd.setAttribute('class', 'placaBody');

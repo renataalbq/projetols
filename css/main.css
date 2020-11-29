@@ -118,8 +118,8 @@ td {
     display: none;
 }
 
-.invalido{
-    border: 1px solid red
+.invalida{
+    animation: placaInput 3s linear;
 }
 
 /* Responsividade */
@@ -141,3 +141,23 @@ td {
     }
 }
 
+@keyframes placaInput {
+    0.0%{
+        background: white;
+        opacity: 1;
+        color: black;
+        border: 2px solid black;
+    }
+    50%{
+        background: red;
+        opacity: 1;
+        color: white;
+        border: 2px solid white;
+    }
+    100%{
+        background: white;
+        opacity: 1;
+        color: white;
+        border: 2px solid white;
+    }
+}
