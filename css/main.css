@@ -58,8 +58,9 @@ td {
 #modelo, #placa {
     font-weight: 600;
     border-radius:.25rem;
+    border: 2px solid black;
     /* border-bottom: 2px solid red; */
-    border-top: none;
+    /* border-top: none; */
 }
 
 #modelo:focus, #placa:focus{
@@ -118,7 +119,7 @@ td {
 }
 
 .invalida{
-    animation: placaInput 3s linear;
+    animation: placaInput 1.5s linear;
 }
 
 /* Responsividade */
