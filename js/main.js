@@ -17,26 +17,28 @@ cadastrar.addEventListener("click", function(event) {
 		return false;
    }
 
-
    var horaFormat = `${hora}:${minutos}`
 
-   if (!modelo || !placa){
-      alert("Preencha todos os campos!");
-      return false;
-   }
-
    let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4}$");
-   if (validaPlaca.test(placa) === false){
-      alert('Placa Inválida!')
-
-      placaClass.value = "";
-      placaClass.textContent = "Placa Inválida";
+   if (validaPlaca.test(placa) === false){ 
+      
+      placaClass = form.placa;
+      placaClass.classList.add("invalida")
+      placaClass.value = "Placa Inválida"
 
       var inputInvalidTimeOut;
+      var inputInvalidValue;
+
+      function invalid() {
+         inputInvalidValue = setTimeout(wrongValue, 1500)
+      }
+
+      function wrongValue() {
+         placaClass.value = ""
+      }
 
       function timeOut() {
          inputInvalidTimeOut = setTimeout(wrongInput, 2000)
-
          return inputInvalidTimeOut
       }
 
@@ -45,7 +47,7 @@ cadastrar.addEventListener("click", function(event) {
       }
 
       timeOut()
-
+      invalid()
       return false
 
    }
