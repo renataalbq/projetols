@@ -24,3 +24,4 @@ search.addEventListener("input", function() {
         }
     }
 });
+

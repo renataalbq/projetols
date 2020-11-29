@@ -67,7 +67,6 @@ td {
     outline:0;
     /* box-shadow:0 0 0 .1rem rgba(0,123,255,.25); */
     /* border-bottom: 2px solid red; */
-
 }
 
 #cadastrar{
@@ -121,7 +120,6 @@ td {
 .invalida{
     animation: placaInput 3s linear;
 }
-
 
 /* Responsividade */
 @media screen and (max-width: 816px){

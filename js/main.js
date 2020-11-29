@@ -11,6 +11,13 @@ cadastrar.addEventListener("click", function(event) {
    var horaEntrada = new Date();
    var hora = horaEntrada.getHours();
    var minutos = horaEntrada.getMinutes();
+
+   if (!modelo || !placa){
+      alert("Preencha todos os campos!");
+		return false;
+   }
+
+
    var horaFormat = `${hora}:${minutos}`
 
    if (!modelo || !placa){
@@ -41,6 +48,7 @@ cadastrar.addEventListener("click", function(event) {
    
       timeOut()
       return false
+
    }
    
    

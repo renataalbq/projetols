@@ -15,4 +15,3 @@ function check(placa,hora,minuto){
     }
 
 }
-
