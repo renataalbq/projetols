@@ -12,31 +12,47 @@ cadastrar.addEventListener("click", function(event) {
    var hora = horaEntrada.getHours();
    var minutos = horaEntrada.getMinutes();
 
+   var horaFormat = `${hora}:${minutos}`
+
+   if (hora < 10 ) {
+      var horaFormat = `0${hora}:${minutos}`
+      if (minutos < 10){
+         var horaFormat = `0${hora}:0${minutos}`
+      }
+   }
+   if (minutos < 10 ) {
+      var horaFormat = `${hora}:0${minutos}`
+   }
+   // if (hora < 10 && minutos < 10) {
+   //    var horaFormat = `0${hora}:0${minutos}`
+   // }
+
    if (!modelo || !placa){
       alert("Preencha todos os campos!");
 		return false;
    }
 
 
-   var horaFormat = `${hora}:${minutos}`
-
-   if (!modelo || !placa){
-      alert("Preencha todos os campos!");
-      return false;
-   }
-
-   let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4}$");
+   let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4} | [a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$");
    if (validaPlaca.test(placa) === false){
-      alert('Placa Inválida!')
 
-      placaClass.value = "";
-      placaClass.textContent = "Placa Inválida";
+      var placaClass = form.placa
+      placaClass.classList.add("invalida")
+      placaClass.value = 'Placa Inválida';
 
       var inputInvalidTimeOut;
+      var inputInvalidValue;
+
+      function invalid(){
+         inputInvalidValue = setTimeout(wrongValue, 1500)
+      }
+
+      function wrongValue(){
+         placaClass.value = '';
+      }
 
       function timeOut() {
          inputInvalidTimeOut = setTimeout(wrongInput, 2000)
-
          return inputInvalidTimeOut
       }
 
@@ -45,11 +61,11 @@ cadastrar.addEventListener("click", function(event) {
       }
 
       timeOut()
+      invalid()
 
       return false
 
    }
-   
    
 
    var veiculoTr = document.createElement("tr");
