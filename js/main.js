@@ -35,7 +35,7 @@ cadastrar.addEventListener("click", function(event) {
    }
 
 
-   let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4} | [a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$");
+   let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4}|[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$");
    if (validaPlaca.test(placa) === false){
 
       var placaClass = form.placa
@@ -77,11 +77,12 @@ cadastrar.addEventListener("click", function(event) {
    var editarTd = document.createElement("td");
    var excluirTd = document.createElement("td");
 
-   var editarBtn = '<button id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button>'
+   var editarBtn = '<button onclick="edit()" id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button>'
    var excluirBtn = '<button onclick="check(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
 
    veiculoTr.setAttribute('class', 'veiculoTr');
    placaTd.setAttribute('class', 'placaBody');
+   modeloTd.setAttribute('class', 'modeloBody');
 
    modeloTd.textContent = modelo;
    placaTd.textContent = placa;
