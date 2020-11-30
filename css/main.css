@@ -23,7 +23,6 @@
 
 /* Imagem principal da página */
 #car-illustration{
-
     width: 250px;
     height: 250px;
     margin-right: 10px;
@@ -44,7 +43,12 @@ td {
 
 #modelo, #placa {
     font-weight: 600;
+<<<<<<< HEAD
     border-radius:4px;
+=======
+    border-radius: 4px;
+    /* border: none; */
+>>>>>>> 4f89db28ce54711821607ab5a103c5f6ea5edb92
     border-top: 2px solid white;
     border-left: 2px solid white;
     border-right: 2px solid white;

@@ -1,8 +1,12 @@
 var cadastrar = document.querySelector("#cadastrar");
 
+// cadastrar.addEventListener("keydown", function(event) {
+//    event.preventDefault();
+// })
 
 cadastrar.addEventListener("click", function(event) {
    event.preventDefault();
+
  
    var form = document.querySelector("#formulario");
 
@@ -23,9 +27,7 @@ cadastrar.addEventListener("click", function(event) {
    if (minutos < 10 ) {
       var horaFormat = `${hora}:0${minutos}`
    }
-   // if (hora < 10 && minutos < 10) {
-   //    var horaFormat = `0${hora}:0${minutos}`
-   // }
+
 
    if (!modelo || !placa){
       alert("Preencha todos os campos!");
@@ -62,7 +64,6 @@ cadastrar.addEventListener("click", function(event) {
 
       timeOut()
       invalid()
-
       return false
 
    }
