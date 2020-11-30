@@ -35,7 +35,7 @@ cadastrar.addEventListener("click", function(event) {
    }
 
 
-   let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4} | [a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$");
+   let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4}|[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$");
    if (validaPlaca.test(placa) === false){
 
       var placaClass = form.placa
