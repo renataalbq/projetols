@@ -1,13 +1,8 @@
 var cadastrar = document.querySelector("#cadastrar");
 
-// cadastrar.addEventListener("keydown", function(event) {
-//    event.preventDefault();
-// })
-
 cadastrar.addEventListener("click", function(event) {
    event.preventDefault();
 
- 
    var form = document.querySelector("#formulario");
 
    var modelo = form.modelo.value.trim().toUpperCase()
@@ -16,24 +11,10 @@ cadastrar.addEventListener("click", function(event) {
    var hora = horaEntrada.getHours();
    var minutos = horaEntrada.getMinutes();
 
-   var horaFormat = `${hora}:${minutos}`
-
-   if (hora < 10 ) {
-      var horaFormat = `0${hora}:${minutos}`
-      if (minutos < 10){
-         var horaFormat = `0${hora}:0${minutos}`
-      }
-   }
-   if (minutos < 10 ) {
-      var horaFormat = `${hora}:0${minutos}`
-   }
-
-
    if (!modelo || !placa){
       alert("Preencha todos os campos!");
 		return false;
    }
-
 
    let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4}|[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$");
    if (validaPlaca.test(placa) === false){
@@ -71,22 +52,26 @@ cadastrar.addEventListener("click", function(event) {
 
    var veiculoTr = document.createElement("tr");
 
-   var modeloTd = document.createElement("td");
-   var placaTd = document.createElement("td");
+   // var modeloModif = `<span contenteditable="true"> ${modelo}  </td>`
+   // var placaModif = `<span contenteditable="true"> ${placa}  </td>`
+
+   var modeloTd = document.createElement("td")
+   var placaTd = document.createElement("td")
    var horaTd = document.createElement("td");
    var editarTd = document.createElement("td");
    var excluirTd = document.createElement("td");
 
-   var editarBtn = '<button onclick="edit()" id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button>'
+   var editarBtn = `<button onclick="edit()" id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button>`;
    var excluirBtn = '<button onclick="check(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
 
-   veiculoTr.setAttribute('class', 'veiculoTr');
+   veiculoTr.setAttribute('id', 'veiculoTr');
    placaTd.setAttribute('class', 'placaBody');
-   modeloTd.setAttribute('class', 'modeloBody');
+   placaTd.setAttribute('id', 'idplacaBody');
+   modeloTd.setAttribute('id', 'idmodeloBody');
 
    modeloTd.textContent = modelo;
    placaTd.textContent = placa;
-   horaTd.textContent = horaFormat;
+   horaTd.textContent = printHoras(hora,minutos);
    editarTd.innerHTML = `<td>${editarBtn} </td>`;
    excluirTd.innerHTML = `<td>${excluirBtn} </td>`;
 
@@ -105,3 +90,22 @@ cadastrar.addEventListener("click", function(event) {
 
 });
 
+function printHoras(hora,minutos){
+   var horaFormat;
+   if (hora < 10 ) {
+      horaFormat = `0${hora}:${minutos}`
+      if (minutos < 10){
+         horaFormat = `0${hora}:0${minutos}`
+      }
+   }
+   if (minutos < 10 ) {
+      horaFormat = `${hora}:0${minutos}`
+   }
+
+   else{
+      horaFormat = `${hora}:${minutos}`
+   }
+
+   return horaFormat;
+
+}
