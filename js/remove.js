@@ -3,8 +3,8 @@ function remove(){
     td.parentNode.remove()
 };
 
-function check(placa,hora,minuto){
-    tempoPercorrido = calcHoras(placa,hora,minuto)
+function check(hora,minuto){
+    tempoPercorrido = calcHoras(hora,minuto)
     result = tempoPercorrido
     var c = confirm(`${result}\nDeseja realmente excluir? `);
     if (c) {

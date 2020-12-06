@@ -62,11 +62,10 @@ cadastrar.addEventListener("click", function(event) {
    var excluirTd = document.createElement("td");
 
    var editarBtn = `<button onclick="edit()" id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button>`;
-   var excluirBtn = '<button onclick="check(\''+ placa +'\',\''+ hora +'\',\''+ minutos +'\')" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
+   var excluirBtn = '<button onclick="check(\''+ hora +'\',\''+ minutos +'\')" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
 
-   veiculoTr.setAttribute('id', 'veiculoTr');
-   placaTd.setAttribute('class', 'placaBody');
-   placaTd.setAttribute('id', 'idplacaBody');
+   veiculoTr.setAttribute('class', 'veiculoTr'); veiculoTr.setAttribute('id', 'veiculoTr');
+   placaTd.setAttribute('class', 'placaBody'); placaTd.setAttribute('id', 'idplacaBody');
    modeloTd.setAttribute('id', 'idmodeloBody');
 
    modeloTd.textContent = modelo;
