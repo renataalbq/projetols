@@ -1,21 +1,20 @@
-function edit() {
+function edit(){
     var modelo = document.getElementById('idmodeloBody')
     var placa = document.getElementById('idplacaBody')
-    newModelo = modelo.nodeValue
-    newPlaca = placa.nodeValue
-    modelo.innerHTML = ''; placa.innerHTML = '';
-    modelo.innerHTML += '<td><input type="text" id="Editmodelo" placeholder="Editar modelo" value"'+newModelo+'"></td>';
-    placa.innerHTML += '<td> <input type="text" id="Editplaca" placeholder="Editar placa" value"'+newPlaca+'"></td>';
-    
-}
+    var textoModelo = modelo.textContent;
+    var textoPlaca = placa.textContent;
+    var inputModelo = '<input type="text" id="newModelo" value="'+textoModelo+'">';
+    var inputPlaca = '<input type="text" id="newPlaca" value="'+textoPlaca+'">';
+    modelo.innerHTML = inputModelo;
+    placa.innerHTML = inputPlaca;
+    var campoModelo = modelo; 
+    var campoPlaca = placa;
+    campoModelo.focus(); campoPlaca.focus();
+    campoModelo.onblur = function(){
+        modelo.innerHTML = updateModelo.value;
+    }   
+    campoPlaca.onblur = function(){
+        placa.innerHTML = updatePlaca.value;
+    }
 
-function update() {
-    var modelo = document.getElementById('idmodeloBody')
-    var placa = document.getElementById('idplacaBody')
-    var updateModelo = document.getElementById('Editmodelo').value;
-    var updatePlaca = document.getElementById('Editplaca').value;
-    
-    modelo = updateModelo;
-    placa = updatePlaca;
-    
 }

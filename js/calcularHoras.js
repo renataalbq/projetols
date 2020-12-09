@@ -1,6 +1,6 @@
 //calculaHoras()
 
-function calcHoras(horaEntrada,minutoEntrada) {
+function calcHoras(placa, horaEntrada,minutoEntrada) {
     var horaEntrada = parseInt(horaEntrada);
     var minutoEntrada = parseInt(minutoEntrada);
     

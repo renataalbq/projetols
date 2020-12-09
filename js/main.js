@@ -52,9 +52,6 @@ cadastrar.addEventListener("click", function(event) {
 
    var veiculoTr = document.createElement("tr");
 
-   // var modeloModif = `<span contenteditable="true"> ${modelo}  </td>`
-   // var placaModif = `<span contenteditable="true"> ${placa}  </td>`
-
    var modeloTd = document.createElement("td")
    var placaTd = document.createElement("td")
    var horaTd = document.createElement("td");
@@ -62,11 +59,11 @@ cadastrar.addEventListener("click", function(event) {
    var excluirTd = document.createElement("td");
 
    var editarBtn = `<button onclick="edit()" id="edit-button" class="btn"><img id="table-btn" src="images/edit_white.png"></button>`;
-   var excluirBtn = '<button onclick="check(\''+ hora +'\',\''+ minutos +'\')" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
+   var excluirBtn = '<button onclick="check(\''+ placa + '\',\''+ hora +'\',\''+ minutos +'\')" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
 
    veiculoTr.setAttribute('class', 'veiculoTr'); veiculoTr.setAttribute('id', 'veiculoTr');
    placaTd.setAttribute('class', 'placaBody'); placaTd.setAttribute('id', 'idplacaBody');
-   modeloTd.setAttribute('id', 'idmodeloBody');
+   modeloTd.setAttribute('class','modeloBody'); modeloTd.setAttribute('id', 'idmodeloBody');
 
    modeloTd.textContent = modelo;
    placaTd.textContent = placa;
