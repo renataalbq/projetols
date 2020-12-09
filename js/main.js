@@ -49,8 +49,9 @@ cadastrar.addEventListener("click", function(event) {
 
    }
 
+   var modeloEdit = `<span contenteditable="true"> ${modelo}  </td>`
+   var placaEdit = `<span contenteditable="true"> ${placa}  </td>`
    
-
    var veiculoTr = document.createElement("tr");
 
    var modeloTd = document.createElement("td")
@@ -63,14 +64,16 @@ cadastrar.addEventListener("click", function(event) {
    var excluirBtn = '<button onclick="check(\''+ placa + '\',\''+ hora +'\',\''+ minutos +'\')" id="clear-button" class="btn btn-danger"><img id="table-btn" src="images/clear_white.png"></button>'
 
    veiculoTr.setAttribute('class', 'veiculoTr'); veiculoTr.setAttribute('id', 'veiculoTr');
+   modeloTd.setAttribute('class', 'modeloBody'); modeloTd.setAttribute('id', 'idmodeloBody');
    placaTd.setAttribute('class', 'placaBody'); placaTd.setAttribute('id', 'idplacaBody');
-   modeloTd.setAttribute('class','modeloBody'); modeloTd.setAttribute('id', 'idmodeloBody');
+ ;
 
-   modeloTd.textContent = modelo;
-   placaTd.textContent = placa;
+   modeloTd.innerHTML = `${modeloEdit}`;
+   placaTd.innerHTML = `${placaEdit}`;
    horaTd.textContent = printHoras(hora,minutos);
    editarTd.innerHTML = `<td>${editarBtn} </td>`;
    excluirTd.innerHTML = `<td>${excluirBtn} </td>`;
+
 
    veiculoTr.appendChild(modeloTd);
    veiculoTr.appendChild(placaTd);
