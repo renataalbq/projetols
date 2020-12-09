@@ -17,7 +17,7 @@ cadastrar.addEventListener("click", function(event) {
    }
 
    let validaPlaca = new RegExp("^[a-zA-Z]{3}[0-9]{4}|[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$");
-   if (validaPlaca.test(placa) === false){
+   if (validaPlaca.test(placa) === false || placa.length > 7){
 
       var placaClass = form.placa
       placaClass.classList.add("invalida")
@@ -48,6 +48,7 @@ cadastrar.addEventListener("click", function(event) {
       return false
 
    }
+
    
 
    var veiculoTr = document.createElement("tr");
