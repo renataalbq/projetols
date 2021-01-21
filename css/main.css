@@ -13,11 +13,13 @@
     width: fit-content;
 }
 
+main{
+  width: 900px;
+  margin: auto;  
+}
 
 #container-main{
     padding-top: 40px;
-    background: rgb(255,3,3);
-    background:linear-gradient(to right,#ff0000,#ff5500,#fff400);
     
 }
 
@@ -62,7 +64,6 @@ td {
     font-weight: 600;
 }
 #cadastrar:hover {
-    border: 2px solid rgb(255, 72, 0);
     background-color:#254281;
     color: #fafafa;
     font-weight: 600;
